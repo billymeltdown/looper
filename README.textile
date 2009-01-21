@@ -1,8 +1,10 @@
 Looper is a dead simple Ruby module for daemonizing your code, meant for use with Rails' script/runner. No forking involved, no detaching, simply running a nice healthy loop, but allowing your code to bail out of it, and making it responsive to signals.
 
-You implement a class like "MessageHandler" that checks for new message objects and then does something to them. This class will include Looper in order to easily loop, respond to shutdown signals, and it can then be run via script/runner as a daemon.
+You implement a class like "DoSomething" that checks for new message objects and then does something to them. This class will include Looper in order to easily loop, respond to shutdown signals, and it can then be run via script/runner as a daemon.
 
-Here's an example class:
+The loop handles sleeping between runs, and will catch any unhandled exceptions that bubble up and keep on truckin'. Thus, if you want to exit on a particular exception, you've got to rescue it in your code and set @\@run@ to @false@.
+
+Here's an example usage:
 
 <pre>
 require 'looper'

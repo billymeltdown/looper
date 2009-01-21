@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary  = "Module for really simple daemons"
   s.email    = "wgray@zetetic.net"
   s.homepage = "http://github.com/billymeltdown/looper"
-  s.description = "Looper is a module that you class can use to become a really, really simple daemon"
+  s.description = "Looper is a module that your class can use to become a really, really simple daemon"
   s.has_rdoc = false
   s.authors  = ["Billy Gray", "Stephen Lombardo"]
   s.files    = [ "README.textile", 
