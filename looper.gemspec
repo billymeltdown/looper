@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "looper"
-  s.version  = "0.0.1"
+  s.version  = "0.0.2"
   s.date     = "2009-01-21"
   s.summary  = "Module for really simple daemons"
   s.email    = "wgray@zetetic.net"
