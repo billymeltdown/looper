@@ -43,10 +43,10 @@ module Looper
     
     puts "#{Time.now} process started with #{run_every} loop. kill #{Process.pid} to stop"
     
-    last_run = Time.now - run_every.seconds - 1
+    last_run = Time.now - run_every - 1
     while (@run) do
       now = Time.now
-      if last_run + run_every.seconds < now
+      if last_run + run_every < now
         begin
           yield
         rescue Exception => e
