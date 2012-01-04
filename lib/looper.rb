@@ -37,7 +37,7 @@ module Looper
   
   def is_windows?
     processor, platform, *rest = RUBY_PLATFORM.split("-")
-    platform =~ 'mswin' || platform =~ 'mingw'
+    platform =~ /mswin/ || platform =~ /mingw/
   end
 
   def loopme(run_every = 10)
