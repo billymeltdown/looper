@@ -28,9 +28,16 @@ module Looper
       puts "caught trapped signal, shutting down"
       @run = false 
     }
-    ["SIGTERM", "SIGINT", "SIGHUP"].each do |signal|
+    signals = ["SIGTERM", "SIGINT"]
+    signals.push("SIGHUP") unless is_windows?
+    signals.each do |signal|
       trap signal, sigtrap
     end
+  end
+  
+  def is_windows?
+    processor, platform, *rest = RUBY_PLATFORM.split("-")
+    platform == 'mswin32'
   end
 
   def loopme(run_every = 10)
